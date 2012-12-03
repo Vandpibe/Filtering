@@ -1,14 +1,16 @@
 {
     "name" : "vandpibe/html-pipeline",
     "autoload" : {
-        "psr-0" : { "Vandpibe\\HtmlPipeline" : "src" }
+        "psr-0" : { "Vandpibe\\Filtering" : "src" }
     },
     "minimum-stability" : "dev",
     "require" : {
         "symfony/options-resolver" : "~2.1"
     },
     "require-dev" : {
-        "phpspec/phpspec2" : "dev-develop"
+        "phpspec/phpspec2" : "dev-develop",
+        "vandpibe/emoji" : "dev-master",
+        "symfony/dependency-injection" : "~2.1"
     },
     "config" : {
         "bin-dir" : "bin"

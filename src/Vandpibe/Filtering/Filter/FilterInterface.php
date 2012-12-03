@@ -1,6 +1,6 @@
 <?php
 
-namespace Vandpibe\Filter;
+namespace Vandpibe\Filtering\Filter;
 
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
