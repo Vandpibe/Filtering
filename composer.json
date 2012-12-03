@@ -1,0 +1,16 @@
+{
+    "name" : "vandpibe/html-pipeline",
+    "autoload" : {
+        "psr-0" : { "Vandpibe\\HtmlPipeline" : "src" }
+    },
+    "minimum-stability" : "dev",
+    "require" : {
+        "symfony/options-resolver" : "~2.1"
+    },
+    "require-dev" : {
+        "phpspec/phpspec2" : "dev-develop"
+    },
+    "config" : {
+        "bin-dir" : "bin"
+    }
+}
