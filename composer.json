@@ -1,5 +1,5 @@
 {
-    "name" : "vandpibe/html-pipeline",
+    "name" : "vandpibe/filtering",
     "autoload" : {
         "psr-0" : { "Vandpibe\\Filtering" : "src" }
     },
