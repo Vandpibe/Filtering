@@ -24,8 +24,8 @@ Usage is simple.
 ``` php
 <?php
 
-use Vandpibe\Filter\FilterChain;
-use Vandpibe\Filter\AutolinkFilter;
+use Vandpibe\Filtering\FilterChain;
+use Vandpibe\Filtering\Filter\AutolinkFilter;
 
 $chain = new FilterChain(array(
     new AutolinkFilter,
@@ -46,6 +46,8 @@ There is currently only a implementation for Symfony's DependencyInjection compo
 ``` php
 <?php
 
+use Vandpibe\Filtering\LazyFilterChain;
+
 $chain = new LazyFilterChain(array(
     'some.service.id',
     'some.other.service.id',
@@ -59,8 +61,8 @@ $text = $chain->filter('mytext', array('context' => true));
 Dependencies
 ------------
 
-It requires the `OptionsResolver` component from Symfony to have flexible merging of contexts and validation of required options.
-
-For testing [PHPSpec2](http://phpspec.net) is used.
+* [OptionsResolver](http://github.com/symfony/optionsresolver)
+* [PHPSpec2](http://phpspec.net) For testing.
+* [DependencyInjection](http://github.com/symfony/dependencyinjection) For the LazyChainFilter.
 
 [![Build Status](https://secure.travis-ci.org/Vandpibe/Filter.png?branch=master)](https://next.travis-ci.org/Vandpibe/Filter)
