@@ -11,7 +11,7 @@ interface FilterInterface
 {
     /**
      * @param string
-     * @param array $context
+     * @param  array  $context
      * @return string
      */
     public function filter($value, array $context);

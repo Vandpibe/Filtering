@@ -49,9 +49,9 @@ class FilterChain implements FilterInterface
     }
 
     /**
-     * @param FilterInterface $filter
-     * @param string $value
-     * @param array $context
+     * @param  FilterInterface $filter
+     * @param  string          $value
+     * @param  array           $context
      * @return string
      */
     protected function call(FilterInterface $filter, $value, array $context)

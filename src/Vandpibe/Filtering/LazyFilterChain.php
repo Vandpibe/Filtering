@@ -23,7 +23,7 @@ class LazyFilterChain extends FilterChain implements ContainerAwareInterface
     }
 
     /**
-     * @param mixed $filter
+     * @param  mixed           $filter
      * @return FilterInterface
      */
     protected function resolve($filter)
