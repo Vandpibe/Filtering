@@ -26,8 +26,12 @@ class EmojiFilter implements FilterInterface
     public function filter($text, array $context)
     {
         // Build a pattern like /:(\+1|ship|light):/
-        $pattern = sprintf('/:(%s):/', implode('|', array_map('preg_quote', $this->emoji->all())));
-        $replacement = '<img class="emoji" title=":\\1:" alt=":\\1:" src="' . $context['asset_root'] . '/\\1.png" height="20" width="20" align="absmiddle" />';
+        $pattern     = sprintf('/:(%s):/', implode('|', array_map('preg_quote', $this->emoji->all())));
+        $replacement = sprintf('<img class="emoji" title=":\\1:" alt=":\\1:" src="%s\\1.png" height="%d" width="%d" align="absmiddle" />',
+            $context['asset_root'] ? $context['asset_root'] . '/' : '',
+            $context['size'],
+            $context['size']
+        );
 
         return preg_replace($pattern, $replacement, $text);
     }
@@ -39,6 +43,7 @@ class EmojiFilter implements FilterInterface
     {
         $resolver->setDefaults(array(
             'asset_root' => '/',
+            'size' => 20,
         ));
 
         $resolver->setNormalizer('asset_root', function (Options $option, $path) {
